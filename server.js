@@ -12,9 +12,10 @@ var corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.use(function (request, response) {
+app.use(function (request, response, next) {
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 
 
